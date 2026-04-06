@@ -14,7 +14,10 @@ export default function Home() {
       canvas.height = window.innerHeight;
     }
     resize();
-    window.addEventListener("resize", () => { resize(); initStars(); });
+    window.addEventListener("resize", () => {
+      resize();
+      initStars();
+    });
 
     function initStars() {
       stars = Array.from({ length: 160 }, () => ({
@@ -70,7 +73,7 @@ export default function Home() {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
     reveals.forEach((el) => observer.observe(el));
 
@@ -131,7 +134,9 @@ export default function Home() {
         setTimeout(() => {
           const b = document.createElement("div");
           b.className = "burst";
-          b.textContent = ["💖", "💗", "💘", "💕", "🌹", "✨"][Math.floor(Math.random() * 6)];
+          b.textContent = ["💖", "💗", "💘", "💕", "🌹", "✨"][
+            Math.floor(Math.random() * 6)
+          ];
           b.style.fontSize = 1 + Math.random() + "rem";
           const a = Math.random() * Math.PI * 2;
           const d = 60 + Math.random() * 80;
@@ -260,7 +265,11 @@ export default function Home() {
 
         <div className="card reveal">
           <p className="eyebrow">✦ uma mensagem do coração ✦</p>
-          <h1>Eu te amo,<br />minha paçoquinha</h1>
+          <h1>
+            Eu te amo,
+            <br />
+            minha paçoquinha
+          </h1>
 
           <div className="divider">
             <span></span>
@@ -269,11 +278,19 @@ export default function Home() {
           </div>
 
           <p className="body-text">
-            Tem dias que eu fico pensando no quanto é <strong>boa sorte</strong> ter você na minha vida.<br /><br />
-            Você é minha <strong>princesa</strong> — doce do jeito certo, irresistível, impossível de ignorar,
-            e do tipo que fica no coração pra sempre.<br /><br />
-            Cada momento contigo é um pedacinho de algo <strong>extraordinário</strong>. Eu escolho você
-            todo dia, sem hesitar, sem arrependimento — só com <strong>amor de verdade</strong>. 💕
+            Tem dias que eu fico pensando no quanto é <strong>boa sorte</strong>{" "}
+            ter você na minha vida.
+            <br />
+            <br />
+            Você é minha <strong>princesa</strong> — doce do jeito certo,
+            irresistível, impossível de ignorar, e do tipo que fica no coração
+            pra sempre.
+            <br />
+            <br />
+            Cada momento contigo é um pedacinho de algo{" "}
+            <strong>extraordinário</strong>. Eu escolho você todo dia, sem
+            hesitar, sem arrependimento — só com{" "}
+            <strong>amor de verdade</strong>. 💕
           </p>
 
           <div className="pills">
@@ -284,10 +301,14 @@ export default function Home() {
             <span className="pill">🌹 meu tudo</span>
           </div>
 
-          <button className="btn-love" id="btn">💌 Clique para sentir meu amor</button>
+          <button className="btn-love" id="btn">
+            💌 Clique para sentir meu amor
+          </button>
         </div>
 
-        <p className="footer-note reveal">feito com todo o amor do mundo só pra você 🌹</p>
+        <p className="footer-note reveal">
+          feito com todo o amor do mundo só pra você 🌹
+        </p>
       </main>
     </>
   );
